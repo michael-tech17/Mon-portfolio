@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - FOLASAYO Michaël</title>
+    <link rel="stylesheet" href="gemini.css">
+    <!--- Font Awesome : lien vers les icônes --->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!--- Entête --->
+    <header>
+        <a href="#" class="logo"><span>FOLASAYO</span> Michaël</a>
+
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home" class="active">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#education">Formations</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--- Contenu Principal --->
+    <main>
+        <!--- Section Accueil --->
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h1>Salut ! Je me nomme <br><span class="name">FOLASAYO Michaël</span></h1>
+                <p class="typing-text">Développeur Web Junior | Technicien Maintenance Junior</p>
+                <p class="description">
+                    Passionné par le numérique et le matériel informatique, je conçois des applications web 
+                    tout en développant mes compétences sur le terrain en maintenance et support d'équipements.
+                </p>
+
+                <div class="social">
+                    <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <a href="Documents/CV de FMK (2).pdf" target="_blank" class="btn">Voir mon CV</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="Images/hero.jpg" alt="Photo de FOLASAYO Michaël">
+            </div>
+        </section>
+
+        <!--- Section À propos --->
+        <section class="about" id="about">
+            <h2>À propos de moi</h2>
+            <div class="about-card">
+                <p class="about-intro">
+                    Je suis <strong>FOLASAYO Michaël</strong>, étudiant en informatique, <strong>Développeur Web Junior</strong> et <strong>Technicien Maintenance Junior</strong>. Passionné par les technologies, j'aime concevoir des interfaces web modernes tout en développant mes compétences en maintenance informatique et en réseaux. Curieux, rigoureux et animé par l'envie de progresser, je considère chaque projet comme une opportunité d'apprendre et de relever de nouveaux défis.
+                </p>
+
+                <div class="about-details">
+                    <div class="about-box">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <div>
+                            <h4>Développement personnel</h4>
+                            <p>L'amélioration de soi est tout aussi essentielle que l'acquisition de compétences techniques.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-box">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                        <div>
+                            <h4>Passions & Loisirs</h4>
+                            <p>Sports mécaniques (Formule 1, MotoGP), football, musique, voyages et actualité internationale.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--- Section Formations --->
+        <section class="education" id="education">
+            <h2>Mes formations</h2>
+
+            <div class="education-grid">
+                <!-- Parcours académique -->
+                <div class="education-card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h3>Parcours académique</h3>
+                    </div>
+
+                    <!--- Formation 1 --->
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <h4>Licence 3 en Génie logiciel</h4>
+                            <span class="badge-status current">En cours</span>
+                        </div>
+                        <span class="institution">HEC Abidjan</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 2024 à Aujourd'hui</span>
+                        <p class="item-desc">Spécialisation dans les domaines du développement logiciel, des systèmes et des technologies numériques.</p>
+                    </div>
+
+                    <!--- Formation 2 --->
+                    <div class="timeline-item">
+                        <div class="item-header">
+                            <h4>Baccalauréat Série D</h4>
+                            <span class="badge-status done">Obtenu</span>
+                        </div>
+                        <span class="institution">Lycée Classique d'Abidjan</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 2024</span>
+                        <p class="item-desc">Acquisition de solides bases scientifiques et d'un esprit d'analyse utile dans mon parcours en informatique.</p>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="education-card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-certificate"></i>
+                        <h3>Certifications</h3>
+                    </div>
+
+                    <!--- Certification 1 --->
+                    <div class="timeline-item">
+                        <h4>Introduction à la science des données</h4>
+                        <span class="institution">Cybastion IT Academy</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 11 Avril 2026</span>
+                        <p class="item-desc">Bases de la science des données, de l'analyse des données et de leur utilisation pour la précision.</p>
+                    </div>
+
+                    <!--- Certification 2 --->
+                    <div class="timeline-item">
+                        <h4>Introduction à l'IA moderne</h4>
+                        <span class="institution">Cybastion IT Academy</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 08 Avril 2026</span>
+                        <p class="item-desc">Initiation aux concepts de l'IA moderne, ses applications et son impact sectoriel.</p>
+                    </div>
+
+                    <!--- Certification 3 --->
+                    <div class="timeline-item">
+                        <h4>Bases du matériel informatique</h4>
+                        <span class="institution">Cybastion IT Academy</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 24 Avril 2025</span>
+                        <p class="item-desc">Composants matériels d'un ordinateur, leur fonctionnement et leur rôle système.</p>
+                    </div>
+
+                    <!--- Certification 4 --->
+                    <div class="timeline-item">
+                        <h4>Introduction à la cybersécurité</h4>
+                        <span class="institution">Cybastion IT Academy</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 23 Avril 2025</span>
+                        <p class="item-desc">Notions fondamentales, menaces informatiques et bonnes pratiques de protection.</p>
+                    </div>
+
+                    <a href="Documents/CERTIFICATS/" target="_blank" class="btn btn-center">Voir mes certificats</a>
+                </div>
+
+                <!-- Badges -->
+                <div class="education-card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-award"></i>
+                        <h3>Badges</h3>
+                    </div>
+
+                    <!--- Badge 1 --->
+                    <div class="timeline-item">
+                        <h4>Introduction to Data Science</h4>
+                        <span class="institution">Cisco Networking Academy</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 11 Avril 2026</span>
+                    </div>
+
+                    <!--- Badge 2 --->
+                    <div class="timeline-item">
+                        <h4>Introduction to Modern AI</h4>
+                        <span class="institution">Cisco Networking Academy</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 08 Avril 2026</span>
+                    </div>
+
+                    <!--- Badge 3 --->
+                    <div class="timeline-item">
+                        <h4>Introduction to Hardware Basics</h4>
+                        <span class="institution">Cisco Networking Academy</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 24 Avril 2025</span>
+                    </div>
+
+                    <!--- Badge 4 --->
+                    <div class="timeline-item">
+                        <h4>Introduction to Cybersecurity</h4>
+                        <span class="institution">Cisco Networking Academy</span>
+                        <span class="date"><i class="fa-regular fa-calendar"></i> 23 Avril 2025</span>
+                    </div>
+
+                    <a href="https://www.credly.com/users/michael-kouakou-folasayo" target="_blank" class="btn btn-center">Voir mes badges</a>
+                </div>
+            </div>
+        </section>
+
+        <!----- Section Compétences ----->
+        <section class="skills" id="skills">
+            <h2>Mes compétences</h2>
+
+             <!---- Compétences Techniques & Outils ----> 
+            <h3 class="skills-subtitle">Compétences Techniques & Outils</h3>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-code"></i>
+                        <h4>Développement Web</h4>
+                    </div>
+                    <p class="skill-desc">Création d'interfaces web modernes, responsives et performantes.</p>
+                    <ul class="skill-list">
+                        <li>
+                            <strong>HTML5 / CSS3</strong> <span class="level badge-inter">Intermédiaire</span>
+                            <p>Pages web statiques, <br>stylisées et 100% responsives.</p>
+                        </li>
+                        <li>
+                            <strong>JavaScript</strong> <span class="level badge-dev">Débutant</span>
+                            <p>Interactions simples, manipulation du <br> DOM et gestion d'événements.</p>
+                        </li>
+                        <li>
+                            <strong>PHP</strong> <span class="level badge-dev">Débutant</span>
+                            <p>Gestion de formulaires et interaction <br> avec bases de données.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!---- Compétences en Maintenance & Réseaux ---->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h4>Maintenance & Réseaux</h4>
+                    </div>
+                    <p class="skill-desc">Maintien du bon fonctionnement et de la disponibilité des équipements.</p>
+                    <ul class="skill-list">
+                        <li>
+                            <strong>Maintenance préventive</strong> <span class="level badge-dev">Débutant</span>
+                            <p>Identification préventive des anomalies <br> et suivi matériel.</p>
+                        </li>
+                        <li>
+                            <strong>Maintenance corrective</strong> <span class="level badge-dev">Débutant</span>
+                            <p>Diagnostic et résolution de pannes matérielles/logicielles.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!---- Compétences en Logiciels & Outils ---->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-toolbox"></i>
+                        <h4>Logiciels & Outils</h4>
+                    </div>
+                    <p class="skill-desc">Outils quotidiens de conception, de développement et de versioning.</p>
+                    <ul class="skill-list">
+                        <li>
+                            <strong>VS Code</strong> <span class="level badge-inter">Intermédiaire</span>
+                            <p>Édition de code, extensions et <br> gestion de projets.</p>
+                        </li>
+                        <li>
+                            <strong>Git & GitHub</strong> <span class="level badge-dev">Débutant</span>
+                            <p>Gestion de versions et travail collaboratif.</p>
+                        </li>
+                        <li>
+                            <strong>Canva</strong> <span class="level badge-dev">Débutant</span>
+                            <p>Création de visuels simples et <br> supports de présentation.</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="skills-bottom-grid">
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-language"></i>
+                        <h4>Langues</h4>
+                    </div>
+                    <ul class="skill-list">
+                        <li>
+                            <strong>Français</strong> <span class="level badge-inter">Niveau B2</span>
+                            <p>Communication fluide à l'oral comme à l'écrit.</p>
+                        </li>
+                        <li>
+                            <strong>Anglais</strong> <span class="level badge-dev">Niveau A2</span>
+                            <p>Compréhension de messages simples et situations courantes.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!---- Qualités Professionnelles ---->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <i class="fa-solid fa-user-check"></i>
+                        <h4>Qualités Professionnelles</h4>
+                    </div>
+                    <ul class="qualities-tags">
+                        <li><i class="fa-solid fa-check"></i> Travail d'équipe</li>
+                        <li><i class="fa-solid fa-check"></i> Communication</li>
+                        <li><i class="fa-solid fa-check"></i> Autonomie</li>
+                        <li><i class="fa-solid fa-check"></i> Résolution de problèmes</li>
+                        <li><i class="fa-solid fa-check"></i> Esprit d'analyse</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!--- Section Projets --->
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2>Mes Projets</h2><br>
+                <p class="section-subtitle">Découvrez une sélection de mes réalisations web personnelles et collaboratives.</p>
+            </div>
+
+            <!--- Catégorie : Projets Personnels --->
+            <div class="projects-category">
+                <h3 class="category-title">
+                    <i class="fa-solid fa-user"></i> Projets personnels
+                </h3>
+                
+                <div class="projects-grid">
+                    <!--- Projet 1 --->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Site restaurant.png" alt="Aperçu IVOIRE FOOD">
+                            <span class="project-badge">Site Statique</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>IVOIRE FOOD</h4>
+                            <p>Site web statique mettant en valeur la gastronomie ivoirienne à travers une interface attrayante, structurée et responsive présentant les différents mets locaux.</p>
+                            <a href="https://michael-tech17.github.io/Restaurant--IVOIRE/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <!--- Projet 2 --->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Site LEG & FRU.png" alt="Aperçu LEG & FRU">
+                            <span class="project-badge">Site Statique</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>LEG & FRU</h4>
+                            <p>Vitrine e-commerce statique dédiée aux produits frais et sains, présentant le catalogue de produits avec des fonctionnalités visuelles de paiement et de gestion.</p>
+                            <a href="https://michael-tech17.github.io/FRU-LEG/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                    <!--- Projet 3 --->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Quiz.png" alt="Aperçu Quiz Application">
+                            <span class="project-badge">App Web Interactive</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Quiz Application</h4>
+                            <p>Application web interactive d'évaluation des connaissances informatiques, proposant un questionnaire dynamique structuré par thématiques.</p>
+                            <a href="https://michael-tech17.github.io/AstraCode/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <!--- Projet 4 --->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Site chaussures.png" alt="Aperçu KICKFLOW">
+                            <span class="project-badge">Site Statique</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>KICKFLOW</h4>
+                            <p>Site web statique d'articles de mode demandant le remplissage d'un formulaire préalable afin de rediriger vers la page de présentation des articles.</p>
+                            <a href="https://michael-tech17.github.io/KICKFLOW/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <!--- Projet 5 --->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Dashboard.png" alt="Aperçu Dashboard">
+                            <span class="project-badge">Interface Statique</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Dashboard Analytic</h4>
+                            <p>Interface de tableau de bord statique moderne et épurée, conçue pour simuler la visualisation synthétique d'indicateurs de performance et d'activités.</p>
+                            <a href="https://michael-tech17.github.io/Dashboard/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div> <br>
+
+            <!--- Catégorie : Projets en Groupe --->
+            <div class="projects-category">
+                <h3 class="category-title">
+                    <i class="fa-solid fa-users-gear"></i> Projets en groupe
+                </h3>
+
+                <div class="projects-grid">
+                    <!--- Projet 6 --->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Formulaire.png" alt="Aperçu Formulaire de Contact">
+                            <span class="project-badge team-badge">Front-End Responsive</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Fiche d'Identification Web</h4>
+                            <p>Interface front-end responsive pour un formulaire de recensement. Réalisation intégrale du côté client (Front-End) associée au Back-End de mon partenaire.</p>
+                            <a href="https://michael-tech17.github.io/Formulaire/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <!--- Projet 7 --->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Site FMK & OIA.png" alt="Aperçu CLICK & GO">
+                            <span class="project-badge team-badge">Site Statique (Binôme)</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>CLICK & GO</h4>
+                            <p>Site web statique de commerce conçu en binôme. Prise en charge de toute la structure et de l'intégration HTML5 sémantique, avec le CSS géré par le partenaire.</p>
+                            <a href="https://michael-tech17.github.io/CLICK-GO/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <!--- Projet 8 --->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Site pharmacie.png" alt="Aperçu PHARMACORE">
+                            <span class="project-badge ongoing-badge">En cours (Statique)</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>PHARMACORE</h4>
+                            <p>Projet en cours de site web statique réalisé en binôme, mettant en avant la présentation des activités et de la gestion de stock au sein d'une pharmacie.</p>
+                            <a href="https://michael-tech17.github.io/PHARMACORE/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section class="contact" id="contact">
+            <h2>Contact</h2>
+            <p class="section-subtitle">
+                Une question, un projet, une opportunité de stage ou d'emploi ? Je serai ravi d'échanger avec vous. N'hésitez pas à me laisser un message ou à me contacter directement via mes coordonnées ci-dessous.
+            </p>
+
+            <div class="contact-container">
+                <!-- Informations de contact -->
+                <div class="contact-info">
+                    <!-- Email -->
+                    <div class="info-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:michaelkouakoufolasayo492@gmail.com">michaelkouakoufolasayo492@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Téléphone -->
+                    <div class="info-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p><a href="tel:+2250769505512">+225 07 69 50 55 12</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Github -->
+                    <div class="info-box">
+                        <i class="fa-brands fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/Folasayo-Michael" target="_blank">github.com/Folasayo-Michael</a></p>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIns -->
+                    <div class="info-box">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/folasayo-michael" target="_blank">linkedin.com/in/folasayo-michael</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Localisation</h4>
+                            <p>Adjamé-Paillet, Abidjan, Côte d'Ivoire</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire de contact -->
+                <div class="contact-form">
+                    <h3>Envoyez-moi un message</h3>
+                    <p>Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.</p>
+
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Votre nom</label>
+                            <input type="text" id="name" name="name" placeholder="Ex: Jean Dupont" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Votre email</label>
+                            <input type="email" id="email" name="email" placeholder="Ex: jean.dupont@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="object">Objet</label>
+                            <input type="text" id="object" name="object" placeholder="Ex: Proposition d'opportunité" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Votre message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message ici..." required></textarea>
+                        </div>
+
+                        
+                        <div class="form-btn-container">
+                            <button type="submit" class="btn">Envoyer le message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo"><span>FOLASAYO</span> Michaël</a>
+                <p>Développeur Web Junior & Technicien Maintenance Junior passionné par l'innovation numérique et les technologies matérielles.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/Folasayo-Michael" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/folasayo-michael" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:michaelkouakoufolasayo492@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation rapide</h4>
+                <ul>
+                    <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> À propos</a></li>
+                    <li><a href="#education"><i class="fa-solid fa-chevron-right"></i> Formations</a></li>
+                    <li><a href="#skills"><i class="fa-solid fa-chevron-right"></i> Compétences</a></li>
+                    <li><a href="#projects"><i class="fa-solid fa-chevron-right"></i> Projets</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact rapide</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Adjamé-Paillet, Abidjan, Côte d'Ivoire</p>
+                <p><i class="fa-solid fa-phone"></i> +225 07 69 50 55 12</p>
+                <p><i class="fa-solid fa-envelope"></i> michaelkouakoufolasayo492@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>FOLASAYO Michaël</span>. Tous droits réservés.</p>
+            <a href="#home" class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>

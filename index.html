@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de FMK</title>
+    <link rel="stylesheet" href="style.css">
+    <!--- Font Awesome : lien vers les icônes --->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!--- Entête --->
+    <header>
+        <a href="#" class="logo"> <span>FOLASAYO</span> Michaël</a>
+
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home" class="home-active">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#education">Formations</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--- Informations Section --->
+    <main>
+        <!--- Section Accueil --->
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h1>Salut !   Je me nomme <br><span class="name">Folasayo Michaël</span> </h1>
+                <span class="typing-text">Développeur Web Junior | Technicien Maintenance Junior</span>
+                <p>Passionné par le numérique et le matériel informatique, je conçois des applications web <br> tout en développant mes compétences sur le terrain en maintenance et support d'équipements.</p>
+
+                <div class="social">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+
+                <a href="https://drive.google.com/file/d/1BV_5uMe6zMH3VpISWMPSMilEuvCja0uC/view?usp=sharing" target="_blank" class="btn">Voir mon CV</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="Images/hero.jpg" alt="Image de Folasayo Michaël">
+            </div>
+        </section>
+        
+        <!--- Section À propos --->
+        <section class="about" id="about">
+            <h2>À propos de moi</h2>
+            <p>Je suis un développeur web avec une expérience dans la création de sites web et d'applications. J'aime apprendre de nouvelles technologies et relever des défis.</p>
+        </section>
+
+
+        <!--- Section Formations --->
+       
+
+        <!--- Section Compétences --->
+        <section class="skills" id="skills">
+            <h2>Compétences</h2>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Python</li>
+            </ul>
+        </section>
+
+        <!--- Section Projets --->
+        <section class="projects" id="projects">
+            <h2>Projets récents</h2>
+            <div class="project">
+                <h3>Projet 1</h3>
+                <p>Description du projet 1.</p>
+            </div>
+
+            <div class="project">
+                <h3>Projet 2</h3>
+                <p>Description du projet 2.</p>
+            </div>
+
+        </section>
+
+        <!--- Section Contact --->
+        <section class="contact" id="contact">
+            <h2>Contactez-moi</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <textarea name="message" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    
+</body>
+</html>
