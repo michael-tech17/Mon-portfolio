@@ -88,41 +88,51 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveByScroll);
     updateActiveByScroll();
 
-    // --- GESTION DU FORMULAIRE DE CONTACT ---
-    const contactForm = document.getElementById('contact-form');
+   // --- GESTION DU FORMULAIRE DE CONTACT ---
+const contactForm = document.getElementById('contact-form');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        // 1. Empêcher le rechargement de la page
+        e.preventDefault();
 
-            const data = {
-                nom: document.getElementById('nom').value,
-                email: document.getElementById('email').value,
-                objet: document.getElementById('objet').value,
-                message: document.getElementById('message').value
-            };
+        // 2. Bloquer le bouton pendant l'envoi pour éviter les doublons
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours...';
 
-            try {
-                const response = await fetch('https://folasayo-mon-portofolio.xo.je/contact.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
+        // 3. Préparer les données au format classique de formulaire (FormData)
+        const formData = new FormData();
+        formData.append('nom', document.getElementById('nom').value);
+        formData.append('email', document.getElementById('email').value);
+        formData.append('objet', document.getElementById('objet').value);
+        formData.append('message', document.getElementById('message').value);
 
-                const result = await response.json();
+        try {
+            // 4. Envoi de la requête vers votre script PHP sur InfinityFree
+            const response = await fetch('https://folasayo-mon-portofolio.xo.je/contact.php', {
+                method: 'POST',
+                body: formData // On envoie le FormData directement (pas besoin de headers)
+            });
 
-                if (result.status === 'success') {
-                    alert('Votre message a bien été envoyé et enregistré !');
-                    contactForm.reset();
-                } else {
-                    alert('Erreur : ' + result.message);
-                }
-            } catch (error) {
-                console.error('Erreur réseau :', error);
-                alert('Une erreur est survenue lors de l\'envoi.');
+            // 5. Lecture de la réponse JSON du serveur
+            const result = await response.json();
+
+            if (result.status === 'success') {
+                alert('Votre message a bien été envoyé et enregistré !');
+                contactForm.reset(); // Réinitialise les champs du formulaire
+            } else {
+                alert('Erreur : ' + result.message);
             }
-        });
-    }
+        } catch (error) {
+            console.error('Erreur réseau ou serveur :', error);
+            alert('Une erreur est survenue lors de l\'envoi. Vérifiez votre connexion.');
+        } finally {
+            // 6. Réactiver le bouton après traitement
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        }
+    });
+}
 });
