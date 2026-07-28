@@ -88,56 +88,70 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveByScroll);
     updateActiveByScroll();
 
-   // --- GESTION DU FORMULAIRE DE CONTACT ---
-const contactForm = document.getElementById('contact-form');
+    // --- GESTION DU FORMULAIRE DE CONTACT ---
+    const contactForm = document.getElementById('contact-form');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async function (e) {
-        // 1. Empêcher le rechargement de la page
-        e.preventDefault();
+    const getFeedbackElement = () => {
+        let feedback = document.getElementById('contact-feedback');
 
-        // 2. Bloquer le bouton pendant l'envoi pour éviter les doublons
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Envoi en cours...';
-
-        // 3. Préparer les données au format classique de formulaire (FormData)
-        const formData = new FormData();
-        formData.append('nom', document.getElementById('nom').value);
-        formData.append('email', document.getElementById('email').value);
-        formData.append('objet', document.getElementById('objet').value);
-        formData.append('message', document.getElementById('message').value);
-
-
-        console.log("Nom :", formData.get("nom"));
-console.log("Email :", formData.get("email"));
-console.log("Objet :", formData.get("objet"));
-console.log("Message :", formData.get("message"));
-        try {
-            // 4. Envoi de la requête vers votre script PHP sur InfinityFree
-            const response = await fetch('https://profil-back-production.up.railway.app', {
-                method: 'POST',
-                body: formData // On envoie le FormData directement (pas besoin de headers)
-            });
-
-            // 5. Lecture de la réponse JSON du serveur
-            const result = await response.json();
-
-            if (result.status === 'success') {
-                alert('Votre message a bien été envoyé et enregistré !');
-                contactForm.reset(); // Réinitialise les champs du formulaire
-            } else {
-                alert('Erreur : ' + result.message);
-            }
-        } catch (error) {
-            console.error('Erreur réseau ou serveur :', error);
-            alert('Une erreur est survenue lors de l\'envoi. Vérifiez votre connexion.');
-        } finally {
-            // 6. Réactiver le bouton après traitement
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
+        if (!feedback) {
+            feedback = document.createElement('div');
+            feedback.id = 'contact-feedback';
+            feedback.style.marginTop = '1rem';
+            feedback.style.padding = '1rem';
+            feedback.style.borderRadius = '0.75rem';
+            feedback.style.fontSize = '0.95rem';
+            feedback.style.display = 'none';
+            feedback.style.maxWidth = '100%';
+            feedback.style.wordBreak = 'break-word';
+            contactForm.appendChild(feedback);
         }
-    });
-}
+
+        return feedback;
+    };
+
+    const showFeedback = (message, isSuccess = true) => {
+        const feedback = getFeedbackElement();
+        feedback.textContent = message;
+        feedback.style.display = 'block';
+        feedback.style.color = isSuccess ? '#0f5132' : '#842029';
+        feedback.style.backgroundColor = isSuccess ? '#d1e7dd' : '#f8d7da';
+        feedback.style.border = isSuccess ? '1px solid #badbcc' : '1px solid #f5c2c7';
+    };
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Préparation...';
+
+            const nom = document.getElementById('nom').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const objet = document.getElementById('objet').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!nom || !email || !objet || !message) {
+                showFeedback('Merci de remplir tous les champs du formulaire avant de l\'envoyer.', false);
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                return;
+            }
+
+            const subject = `Nouveau message de ${nom} - ${objet}`;
+            const body = `Nom : ${nom}\r\nEmail : ${email}\r\nObjet : ${objet}\r\n\r\n${message}`;
+            const mailtoLink = `mailto:michaelkouakoufolasayo492@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            showFeedback('Votre message est transféré vers Gmail. Vérifiez la fenêtre de votre client de messagerie.', true);
+
+            setTimeout(() => {
+                window.location.href = mailtoLink;
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                contactForm.reset();
+            }, 400);
+        });
+    }
 });
