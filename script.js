@@ -109,9 +109,14 @@ if (contactForm) {
         formData.append('objet', document.getElementById('objet').value);
         formData.append('message', document.getElementById('message').value);
 
+
+        console.log("Nom :", formData.get("nom"));
+console.log("Email :", formData.get("email"));
+console.log("Objet :", formData.get("objet"));
+console.log("Message :", formData.get("message"));
         try {
             // 4. Envoi de la requête vers votre script PHP sur InfinityFree
-            const response = await fetch('https://folasayo-mon-portofolio.xo.je/contact.php', {
+            const response = await fetch('https://profil-back-production.up.railway.app', {
                 method: 'POST',
                 body: formData // On envoie le FormData directement (pas besoin de headers)
             });
