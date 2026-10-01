@@ -149,6 +149,44 @@ header {
     z-index: 1001;
 }
 
+/* ===== ANIMATION AU DÉFILEMENT (SCROLL REVEAL BIDIRECTIONNEL) ==== */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+/* Quand l'élément entre dans la fenêtre */
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========== NOUVEAU BOUTON DU HEADER (ME CONTACTER) ========== */
+.btn-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.2rem;
+    background: rgba(70, 236, 197, 0.08);
+    color: #46ECC5;
+    border: 1.5px solid #46ECC5;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-header:hover {
+    background: #46ECC5;
+    color: #0B0F10;
+    box-shadow: 0 0 15px rgba(70, 236, 197, 0.4);
+    transform: translateY(-2px);
+}
+
 /* ==========================================================================
    5. SECTION ACCUEIL (HERO SECTION)
    ========================================================================== */
@@ -328,11 +366,19 @@ header {
     color: #46ECC5;
 }
 
+/* Grille principale 2 colonnes équilibrées */
 .education-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    align-items: stretch;
+    align-items: start;
+}
+
+/* Conteneur vertical de chaque colonne */
+.education-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .education-card {
@@ -389,6 +435,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .badge-status {
@@ -409,6 +456,18 @@ header {
     color: #9CA3AF;
 }
 
+/* Badge distinctif pour les accréditations Cisco & Python Institute */
+.badge-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 700;
+    background: rgba(70, 236, 197, 0.12);
+    color: #46ECC5;
+    border: 1px solid rgba(70, 236, 197, 0.3);
+    white-space: nowrap;
+}
+
 .timeline-item .institution {
     color: #46ECC5;
     font-size: 0.95rem;
@@ -426,8 +485,37 @@ header {
 .timeline-item .item-desc {
     color: #D1D5DB;
     font-size: 0.88rem;
-    line-height: 1.4;
+    line-height: 1.5;
     margin-top: 0.4rem;
+}
+
+/* Ligne des deux boutons en bas de la carte Certifications & Badges */
+.cert-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #46ECC5;
+    border: 2px solid #46ECC5;
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background: #46ECC5;
+    color: #0B0F10;
+    box-shadow: 0 8px 25px rgba(70, 236, 197, 0.4);
+    transform: translateY(-3px);
 }
 
 /* ==========================================================================
@@ -506,30 +594,46 @@ header {
 
 .skill-list li {
     background: rgba(11, 15, 16, 0.5);
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1rem;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Ligne supérieure de chaque compétence : libellé à gauche, badge à droite */
+.skill-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
 }
 
 .skill-list strong {
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.98rem;
 }
 
 .skill-list p {
     font-size: 0.88rem;
     color: #9CA3AF;
-    margin-top: 0.3rem;
-    line-height: 1.4;
+    line-height: 1.45;
+    margin: 0;
 }
 
+/* Badges de niveau (flexbox moderne, plus de chevauchement) */
 .level {
-    display: inline-block;
-    float: right;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
+    padding: 0.2rem 0.65rem;
     border-radius: 20px;
     font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .badge-inter {
@@ -716,6 +820,188 @@ header {
     font-size: 0.8rem;
 }
 
+/* ======== CARTE PROJET PHARE (FEATURED PROJECT) ====== */
+.project-card-featured {
+    grid-column: 1 / -1; /* Occupe toute la largeur de la grille */
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: linear-gradient(135deg, rgba(11, 15, 16, 0.9) 0%, rgba(70, 236, 197, 0.05) 100%);
+    border: 1.5px solid rgba(70, 236, 197, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-card-featured .featured-img {
+    height: 100%;
+    min-height: 280px;
+    border-bottom: none;
+    border-right: 1px solid #2A3638;
+}
+
+.featured-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-header h4 {
+    font-size: 1.5rem;
+    color: #46ECC5;
+    margin-bottom: 0.5rem;
+}
+
+.tech-stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-stack-tags span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #D1D5DB;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+}
+
+.featured-highlights {
+    list-style: none;
+    margin: 1rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.featured-highlights li {
+    font-size: 0.9rem;
+    color: #D1D5DB;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.featured-highlights li i {
+    color: #46ECC5;
+    font-size: 0.85rem;
+}
+
+/* Basculement responsive en colonne unique sur mobile / tablette */
+@media (max-width: 900px) {
+    .project-card-featured {
+        grid-template-columns: 1fr;
+    }
+    .project-card-featured .featured-img {
+        min-height: 200px;
+        border-right: none;
+        border-bottom: 1px solid #2A3638;
+    }
+    .featured-content {
+        padding: 1.5rem;
+    }
+}
+
+
+/*======== BADGE & BOUTON PROJET PRIVÉ / INTERNE ======== */
+.project-badge.private-badge {
+    color: #F59E0B;
+    border-color: #F59E0B;
+}
+
+.btn-private {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #9CA3AF;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    cursor: default;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.btn-private i {
+    font-size: 0.85rem;
+    color: #F59E0B;
+}
+
+.btn-private:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+    background: rgba(245, 158, 11, 0.05);
+}
+
+/* ===== BOUTONS D'ACTIONS DES PROJETS (DÉMO + CODE SOURCE) ===== */
+.project-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.btn-code {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #D1D5DB;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-code:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #46ECC5;
+    color: #FFFFFF;
+}
+
+/* Adaptation pour les écrans mobiles : le bouton Me contacter et son texte restent bien visibles */
+@media (max-width: 650px) {
+    header {
+        padding: 0.9rem 4%;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+        gap: 0.35rem;
+    }
+
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .btn-header {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.45rem 0.75rem;
+        font-size: 0.78rem;
+        border-radius: 20px;
+        gap: 0.35rem;
+    }
+
+    .btn-header span {
+        display: inline !important; /* Force l'affichage du texte "Me contacter" */
+    }
+
+    .menu-icon {
+        font-size: 1.5rem;
+    }
+}
+
 /* ==========================================================================
    10. SECTION CONTACT (CONTACT)
    ========================================================================== */
@@ -877,6 +1163,45 @@ header {
     margin-top: 0.8rem;
 }
 
+/* ======= NOTIFICATION DU FORMULAIRE DE CONTACT (FEEDBACK) ======= */
+#contact-feedback {
+    display: none;
+    margin-top: 1.2rem;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+    animation: fadeInSlide 0.4s ease forwards;
+}
+
+#contact-feedback.success {
+    display: block;
+    color: #46ECC5;
+    background: rgba(70, 236, 197, 0.12);
+    border: 1px solid #46ECC5;
+    box-shadow: 0 0 15px rgba(70, 236, 197, 0.2);
+}
+
+#contact-feedback.error {
+    display: block;
+    color: #FF6B6B;
+    background: rgba(255, 107, 107, 0.12);
+    border: 1px solid #FF6B6B;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ==========================================================================
    11. PIED DE PAGE (FOOTER)
    ========================================================================== */
@@ -1026,8 +1351,78 @@ footer {
     transform: translateY(-3px);
 }
 
+/* ===================================================================================
+   12. STYLE DU LOGO IMAGE & DU BOUTON FLOTTANT WHATSAPP AVEC ANIMATION DE LEVITATION
+   =================================================================================== */
+.logo-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1.5px solid #46ECC5;
+    box-shadow: 0 0 10px rgba(70, 236, 197, 0.25);
+    flex-shrink: 0;
+}
+
+/* Bouton Flottant WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+    z-index: 999;
+    text-decoration: none;
+    /* Même animation que votre image d'accueil */
+    animation: floatWhatsapp 3.5s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pause l'animation au survol et applique un léger zoom */
+.whatsapp-float:hover {
+    animation-play-state: paused;
+    transform: scale(1.12);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.7);
+    color: #FFFFFF;
+}
+
+/* Animation calquée sur celle de l'image Hero */
+@keyframes floatWhatsapp {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+    }
+    50% {
+        transform: translateY(-10px); /* Il monte de 10px */
+        box-shadow: 0 14px 28px rgba(37, 211, 102, 0.55); /* L'ombre s'intensifie */
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+    }
+}
+
+/* Version mobile */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        bottom: 18px;
+        right: 18px;
+        width: 50px;
+        height: 50px;
+        font-size: 27px;
+    }
+}
+
 /* ==========================================================================
-   12. DESIGN RESPONSIVE (MEDIA QUERIES)
+   13. DESIGN RESPONSIVE (MEDIA QUERIES)
    ========================================================================== */
 
 /* Écrans larges & Tablettes (Basculement sur menu burger dès 1200px) */

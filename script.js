@@ -3,14 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.getElementById('menu-icon');
     const navbar = document.getElementById('navbar');
 
-    // --- GESTION DU MENU BURGER ---
+    // --- 1. GESTION DU MENU BURGER ---
     if (menuIcon && navbar) {
-        // Toggle ouverture / fermeture au clic sur l'icône burger
         menuIcon.addEventListener('click', () => {
             navbar.classList.toggle('active');
         });
 
-        // Fermeture automatique du menu après un clic sur un lien
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navbar.classList.remove('active');
@@ -18,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- GESTION DES LIENS ACTIFS ---
+    // --- 2. GESTION DES LIENS ACTIFS ---
     const setActiveLink = (hash) => {
         navLinks.forEach(link => {
             const isActive = link.getAttribute('href') === hash;
@@ -26,13 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- DEFILEMENT FLUIDE (SMOOTH SCROLL) ---
-    const scrollToSection = (targetId, duration = 900) => {
+    // --- 3. DÉFILEMENT FLUIDE (SMOOTH SCROLL) ---
+    const scrollToSection = (targetId, duration = 800) => {
         const target = document.getElementById(targetId);
         if (!target) return;
 
         const startY = window.scrollY;
-        const targetY = target.getBoundingClientRect().top + window.scrollY - 90;
+        const targetY = target.getBoundingClientRect().top + window.scrollY - 85;
         const startTime = performance.now();
 
         const animateScroll = (currentTime) => {
@@ -48,10 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animateScroll);
     };
 
-    navLinks.forEach(link => {
+    // Prise en charge des clics d'ancrage (Navbar, bouton Header "Me contacter", retour en haut)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (event) => {
             const href = link.getAttribute('href');
-            if (!href || !href.startsWith('#')) return;
+            if (!href || href === '#') return;
 
             event.preventDefault();
             const targetId = href.slice(1);
@@ -60,98 +59,121 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- BOUTON RETOUR EN HAUT ---
-    const backToTopButton = document.querySelector('.back-to-top');
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            setActiveLink('#home');
-            scrollToSection('home');
+    // --- 4. ANIMATION AU DÉFILEMENT BIDIRECTIONNELLE (APPARITION & DISPARITION) ---
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window && revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Quand l'élément entre dans la vue : il s'affiche
+                    entry.target.classList.add('show');
+                } else {
+                    // Quand l'élément quitte la vue (en descendant ou remontant) : il disparaît
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.12, // Déclenchement dès que 12% de l'élément est visible
+            rootMargin: '0px 0px -40px 0px'
         });
+
+        revealElements.forEach(el => revealObserver.observe(el));
     }
 
-    // --- MISE A JOUR AUTOMATIQUE DU LIEN ACTIF AU DEFILEMENT ---
-    const updateActiveByScroll = () => {
-        const sections = document.querySelectorAll('section[id]');
-        let currentId = 'home';
-        const scrollPosition = window.scrollY + 120;
-
-        sections.forEach(section => {
-            if (scrollPosition >= section.offsetTop) {
-                currentId = section.id;
+    // --- 5. DÉTECTION DE LA SECTION ACTIVE AU DÉFILEMENT (PERFORMANTE) ---
+    const sections = document.querySelectorAll('section[id]');
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setActiveLink(`#${entry.target.id}`);
             }
         });
+    }, {
+        threshold: 0.35 // Activé dès que 35% de la section est visible
+    });
 
-        setActiveLink(`#${currentId}`);
-    };
+    sections.forEach(sec => sectionObserver.observe(sec));
 
-    window.addEventListener('scroll', updateActiveByScroll);
-    updateActiveByScroll();
 
-    // --- GESTION DU FORMULAIRE DE CONTACT ---
+    // --- GESTION DU FORMULAIRE DE CONTACT VIA API (FORMSPREE) ---
     const contactForm = document.getElementById('contact-form');
 
+    // Récupération ou création du bloc de confirmation
     const getFeedbackElement = () => {
         let feedback = document.getElementById('contact-feedback');
-
         if (!feedback) {
             feedback = document.createElement('div');
             feedback.id = 'contact-feedback';
-            feedback.style.marginTop = '1rem';
-            feedback.style.padding = '1rem';
-            feedback.style.borderRadius = '0.75rem';
-            feedback.style.fontSize = '0.95rem';
-            feedback.style.display = 'none';
-            feedback.style.maxWidth = '100%';
-            feedback.style.wordBreak = 'break-word';
+            // On l'ajoute juste après le bouton ou en bas du formulaire
             contactForm.appendChild(feedback);
         }
-
         return feedback;
     };
 
     const showFeedback = (message, isSuccess = true) => {
         const feedback = getFeedbackElement();
-        feedback.textContent = message;
-        feedback.style.display = 'block';
-        feedback.style.color = isSuccess ? '#0f5132' : '#842029';
-        feedback.style.backgroundColor = isSuccess ? '#d1e7dd' : '#f8d7da';
-        feedback.style.border = isSuccess ? '1px solid #badbcc' : '1px solid #f5c2c7';
+        feedback.className = isSuccess ? 'success' : 'error';
+        feedback.innerHTML = isSuccess 
+            ? `<i class="fa-solid fa-circle-check" style="margin-right: 8px;"></i> ${message}`
+            : `<i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i> ${message}`;
+        
+        // Fait défiler la vue vers la confirmation si l'écran est petit
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     };
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
+            const originalBtnContent = submitBtn.innerHTML;
+            
+            // État pendant l'envoi
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Préparation...';
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours...';
 
-            const nom = document.getElementById('nom').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const objet = document.getElementById('objet').value.trim();
-            const message = document.getElementById('message').value.trim();
+            const formData = new FormData(contactForm);
 
-            if (!nom || !email || !objet || !message) {
-                showFeedback('Merci de remplir tous les champs du formulaire avant de l\'envoyer.', false);
+            try {
+                // Remplace bien 'TON_ID_FORMSPREE' par ton vrai ID Formspree
+                const response = await fetch('https://formspree.io/f/xeaodnnq', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Confirmation claire sur le bouton et dans le bandeau
+                    submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Envoyé !';
+                    submitBtn.style.background = '#46ECC5';
+                    submitBtn.style.color = '#0B0F10';
+
+                    showFeedback('Votre message a bien été transmis à Michaël ! Une réponse vous sera apportée sous peu.', true);
+                    contactForm.reset();
+
+                    // Rétablit le bouton après 5 secondes
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnContent;
+                        submitBtn.style.background = '';
+                        submitBtn.style.color = '';
+                    }, 5000);
+
+                } else {
+                    const data = await response.json();
+                    const errMsg = data.errors ? data.errors.map(err => err.message).join(', ') : 'Une erreur est survenue lors de l\'envoi.';
+                    showFeedback(errMsg, false);
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                }
+            } catch (error) {
+                showFeedback('Impossible d\'envoyer le message. Vérifiez votre connexion Internet.', false);
                 submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-                return;
+                submitBtn.innerHTML = originalBtnContent;
             }
-
-            const subject = `Nouveau message de ${nom} - ${objet}`;
-            const body = `Nom : ${nom}\r\nEmail : ${email}\r\nObjet : ${objet}\r\n\r\n${message}`;
-            const mailtoLink = `mailto:michaelkouakoufolasayo492@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            showFeedback('Votre message est transféré vers Gmail. Vérifiez la fenêtre de votre client de messagerie.', true);
-
-            setTimeout(() => {
-                window.location.href = mailtoLink;
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-                contactForm.reset();
-            }, 400);
         });
     }
 });

@@ -1,74 +1,112 @@
-<!DOCTYPE html>
-<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - FOLASAYO Michaël</title>
+    <title>FOLASAYO Michaël — Développeur Web & Logiciel Junior</title>
+
+    <!-- SEO Général -->
+    <meta name="title" content="FOLASAYO Michaël — Développeur Web & Logiciel Junior">
+    <meta name="description" content="Portfolio de FOLASAYO Michaël, étudiant en Génie Logiciel. Développement d'applications web modernes (JavaScript, Firebase, APIs) et compétences en infrastructures réseaux.">
+    <meta name="keywords" content="FOLASAYO Michaël, Développeur Web, Génie Logiciel, Côte d'Ivoire, Abidjan, JavaScript, Firebase, Portfolio, Frontend">
+    <meta name="author" content="FOLASAYO Michaël">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon (Onglet du navigateur) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2346ECC5'>⚡</text></svg>">
+
+    <!-- Open Graph (Aperçu enrichi sur WhatsApp, LinkedIn, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://michael-tech17.github.io/">
+    <meta property="og:title" content="FOLASAYO Michaël — Développeur Web & Logiciel Junior">
+    <meta property="og:description" content="Découvrez mes projets web, mes compétences techniques et mes réalisations (Nexia, back-office, applications interactives).">
+    <meta property="og:image" content="Images/hero.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FOLASAYO Michaël — Développeur Web & Logiciel Junior">
+    <meta name="twitter:description" content="Découvrez mes projets web, mes compétences techniques et mes réalisations.">
+    <meta name="twitter:image" content="Images/hero.jpg">
+
+    <!-- Feuilles de style et icônes -->
     <link rel="stylesheet" href="style.css">
-    <!--- Font Awesome : lien vers les icônes --->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <!--- Entête --->
+    <!-- Entête -->
     <header>
-        <a href="#" class="logo"><span>FOLASAYO</span> Michaël</a>
+        <a href="#" class="logo">
+            <img src="Images/Logo.jpg" alt="Logo FOLASAYO Michaël" class="logo-img">
+            <span>FOLASAYO</span> Michaël
+        </a>
 
         <nav>
             <ul class="navbar" id="navbar">
                 <li><a href="#home" class="active">Accueil</a></li>
                 <li><a href="#about">À propos</a></li>
-                <li><a href="#education">Formations</a></li>
+                <li><a href="#education">Parcours</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
+        <!-- Bouton d'action directe -->
+        <a href="#contact" class="btn-header">
+            <i class="fa-regular fa-paper-plane"></i>
+            <span>Me contacter</span>
+        </a>
+
         <div class="menu-icon" id="menu-icon">
             <i class="fa-solid fa-bars"></i>
         </div>
     </header>
 
-    <!--- Contenu Principal --->
+    <!-- Contenu Principal -->
     <main>
-        <!--- Section Accueil --->
+        <!-- Section Accueil -->
         <section class="hero" id="home">
-            <div class="hero-text">
+            <div class="hero-text reveal">
                 <h1>Salut ! Je me nomme <br><span class="name">FOLASAYO Michaël</span></h1>
-                <p class="typing-text">Développeur Web Junior | Technicien Maintenance Junior</p>
+                <p class="typing-text">Développeur Web & Logiciel Junior</p>
                 <p class="description">
-                    Passionné par le numérique et le matériel informatique, je conçois des applications web 
-                    tout en développant mes compétences sur le terrain en maintenance et support d'équipements.
+                    Étudiant en Génie Logiciel, je conçois des applications web modernes et dynamiques tout en apportant une expertise terrain concrète en maintenance préventive et déploiement d'infrastructures télécoms.
                 </p>
 
                 <div class="social">
-                    <a href="https://github.com/michael-tech17" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/michaël-kouakou-folasayo-94a248425" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/michael-tech17" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/folasayo-michael" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
 
-                <a href="Documents/CV de FMK (2).pdf" target="_blank" class="btn">Voir mon CV</a>
+                <a href="Documents/CV de FMK (2).pdf" target="_blank" rel="noopener noreferrer" class="btn">Voir mon CV</a>
             </div>
 
-            <div class="hero-image">
+            <div class="hero-image reveal">
                 <img src="Images/hero.jpg" alt="Photo de FOLASAYO Michaël">
             </div>
         </section>
 
-        <!--- Section À propos --->
+        <!-- Section À propos -->
         <section class="about" id="about">
-            <h2>À propos de moi</h2>
-            <div class="about-card">
+            <h2 class="reveal">À propos de moi</h2>
+            <div class="about-card reveal">
                 <p class="about-intro">
-                    Je suis <strong>FOLASAYO Michaël</strong>, étudiant en informatique, <strong>Développeur Web Junior</strong> et <strong>Technicien Maintenance Junior</strong>. Passionné par les technologies, j'aime concevoir des interfaces web modernes tout en développant mes compétences en maintenance informatique et en réseaux. Curieux, rigoureux et animé par l'envie de progresser, je considère chaque projet comme une opportunité d'apprendre et de relever de nouveaux défis.
+                    Je suis <strong>FOLASAYO Michaël</strong>, étudiant en <strong>Licence 3 Génie Logiciel</strong> à HEC Abidjan, <strong>Développeur Web & Logiciel Junior</strong>. Fort d'expériences pratiques sur le terrain en déploiement d'infrastructures réseaux (télécoms, fibre optique) et en maintenance préventive, j'allie la rigueur du matériel à la conception d'applications web dynamiques et sécurisées. Curieux, méthodique et animé par le goût du défi technique, j'aborde chaque projet avec le souci de la performance, de la sécurité et de l'expérience utilisateur.
                 </p>
 
                 <div class="about-details">
                     <div class="about-box">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <div>
+                            <h4>Vision & Polyvalence</h4>
+                            <p>Comprendre le chemin physique des données (infrastructure, réseau) pour concevoir de meilleures solutions logicielles.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-box">
                         <i class="fa-solid fa-user-gear"></i>
                         <div>
                             <h4>Développement personnel</h4>
-                            <p>L'amélioration de soi est tout aussi essentielle que l'acquisition de compétences techniques.</p>
+                            <p>L'apprentissage continu et la veille technologique sont au cœur de ma démarche quotidienne.</p>
                         </div>
                     </div>
 
@@ -76,258 +114,392 @@
                         <i class="fa-solid fa-flag-checkered"></i>
                         <div>
                             <h4>Passions & Loisirs</h4>
-                            <p>Sports mécaniques (Formule 1, MotoGP), football, musique, voyages et actualité internationale.</p>
+                            <p>Sports mécaniques (Formule 1, MotoGP), football, musique, voyages et actualité technologique internationale.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!--- Section Formations --->
+        <!-- Section Formations & Expériences -->
         <section class="education" id="education">
-            <h2>Mes formations</h2>
+            <h2 class="reveal">Formations & Expériences</h2>
 
-            <div class="education-grid">
-                <!-- Parcours académique -->
-                <div class="education-card">
-                    <div class="card-title">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <h3>Parcours académique</h3>
-                    </div>
-
-                    <!--- Formation 1 --->
-                    <div class="timeline-item">
-                        <div class="item-header">
-                            <h4>Licence 3 en Génie logiciel</h4>
-                            <span class="badge-status current">En cours</span>
+            <div class="education-grid education-two-cols">
+                
+                <!-- COLONNE 1 : Parcours Académique & Stages -->
+                <div class="education-column reveal">
+                    
+                    <!-- Bloc : Parcours académique -->
+                    <div class="education-card">
+                        <div class="card-title">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <h3>Parcours académique</h3>
                         </div>
-                        <span class="institution">HEC Abidjan</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 2024 à Aujourd'hui</span>
-                        <p class="item-desc">Spécialisation dans les domaines du développement logiciel, des systèmes et des technologies numériques.</p>
-                    </div>
 
-                    <!--- Formation 2 --->
-                    <div class="timeline-item">
-                        <div class="item-header">
-                            <h4>Baccalauréat Série D</h4>
-                            <span class="badge-status done">Obtenu</span>
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Licence 3 en Génie logiciel</h4>
+                                <span class="badge-status current">En cours</span>
+                            </div>
+                            <span class="institution">HEC Abidjan</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 2024 à Aujourd'hui</span>
+                            <p class="item-desc">Spécialisation dans les domaines du développement logiciel, des systèmes et des technologies numériques.</p>
                         </div>
-                        <span class="institution">Lycée Classique d'Abidjan</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 2024</span>
-                        <p class="item-desc">Acquisition de solides bases scientifiques et d'un esprit d'analyse utile dans mon parcours en informatique.</p>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Baccalauréat Série D</h4>
+                                <span class="badge-status done">Obtenu</span>
+                            </div>
+                            <span class="institution">Lycée Classique d'Abidjan</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 2024</span>
+                            <p class="item-desc">Acquisition de solides bases scientifiques et d'un esprit d'analyse utile dans mon parcours en informatique.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bloc : Stages & Expériences -->
+                    <div class="education-card">
+                        <div class="card-title">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <h3>Stages & Expériences</h3>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Stagiaire Réseaux & Télécoms</h4>
+                                <span class="badge-status done">Terminé</span>
+                            </div>
+                            <span class="institution">RTIS Technologies</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 15 Juillet 2026 - 30 Septembre 2026</span>
+                            <p class="item-desc">
+                                Immersion technique sur le déploiement d'infrastructures fibre optique (Projet Huawei / Douane CI sur les sites SIR et CENTIF). 
+                                Supervision des travaux de génie civil (fouilles, fonçage, pose de tubes PEHD et chambres télécom), participation aux tâches EHS et suivi qualité via l'application mobile ISDP. Initiation à la maintenance préventive et participation au volet administratif.
+                            </p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Stagiaire Support Administratif & Reportage</h4>
+                                <span class="badge-status done">Terminé</span>
+                            </div>
+                            <span class="institution">Direction Départementale des Sports (District Autonome d'Abidjan)</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 01 Juillet 2025 - 01 Août 2025</span>
+                            <p class="item-desc">
+                                Coordination et suivi des activités sportives communales. Réalisation de reportages terrain, transmission et centralisation des données via les canaux internes. Élaboration des bilans statistiques hebdomadaires et découverte transversale des services.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLONNE 2 : Certifications & Badges -->
+                <div class="education-column reveal">
+                    <div class="education-card">
+                        <div class="card-title">
+                            <i class="fa-solid fa-certificate"></i>
+                            <h3>Certifications & Badges</h3>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Essentiels de Python 1</h4>
+                                <span class="badge-tag">Cisco & Python Institute</span>
+                            </div>
+                            <span class="institution">Cybastion IT Academy / Cisco Networking Academy</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 26 Septembre 2026</span>
+                            <p class="item-desc">Fondamentaux du langage Python, logique algorithmique, structures de données et programmation de base.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Notions de base sur les réseaux</h4>
+                                <span class="badge-tag">Cisco</span>
+                            </div>
+                            <span class="institution">Cybastion IT Academy / Cisco Networking Academy</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 14 Août 2026</span>
+                            <p class="item-desc">Principes et protocoles réseau, architectures de communication et adressage IP.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Appliquer l'IA : Analyser les avis clients</h4>
+                                <span class="badge-tag">Cisco</span>
+                            </div>
+                            <span class="institution">Cybastion IT Academy / Cisco Networking Academy</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 02 Août 2026</span>
+                            <p class="item-desc">Exploitation de l'intelligence artificielle pour l'analyse textuelle, le sentiment client et l'extraction d'insights.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Appliquer l'IA : Mettre à jour votre CV</h4>
+                                <span class="badge-tag">Cisco</span>
+                            </div>
+                            <span class="institution">Cybastion IT Academy / Cisco Networking Academy</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 02 Août 2026</span>
+                            <p class="item-desc">Utilisation d'outils d'IA générative pour l'optimisation, la restructuration et la valorisation du profil professionnel.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Introduction à la science des données</h4>
+                                <span class="badge-tag">Cisco</span>
+                            </div>
+                            <span class="institution">Cybastion IT Academy</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 11 Avril 2026</span>
+                            <p class="item-desc">Bases de la science des données, analyse de données et modélisation pour la prise de décision.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Introduction à l'IA moderne</h4>
+                                <span class="badge-tag">Cisco</span>
+                            </div>
+                            <span class="institution">Cybastion IT Academy</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 08 Avril 2026</span>
+                            <p class="item-desc">Initiation aux concepts de l'IA moderne, machine learning, vision par ordinateur et applications sectorielles.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Bases du matériel informatique</h4>
+                                <span class="badge-tag">Cisco</span>
+                            </div>
+                            <span class="institution">Cybastion IT Academy</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 24 Avril 2025</span>
+                            <p class="item-desc">Composants matériels d'un ordinateur, diagnostic d'assemblage et fonctionnement système.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="item-header">
+                                <h4>Introduction à la cybersécurité</h4>
+                                <span class="badge-tag">Cisco</span>
+                            </div>
+                            <span class="institution">Cybastion IT Academy</span>
+                            <span class="date"><i class="fa-regular fa-calendar"></i> 23 Avril 2025</span>
+                            <p class="item-desc">Notions fondamentales, menaces informatiques et bonnes pratiques de protection numérique.</p>
+                        </div>
+
+                        <div class="cert-actions-row">
+                            <a href="Documents/CERTIFICATS/" target="_blank" rel="noopener noreferrer" class="btn">Voir mes certificats</a>
+                            <a href="https://www.credly.com/users/michael-kouakou-folasayo" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Voir mes badges</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Certifications -->
-                <div class="education-card">
-                    <div class="card-title">
-                        <i class="fa-solid fa-certificate"></i>
-                        <h3>Certifications</h3>
-                    </div>
-
-                    <!--- Certification 1 --->
-                    <div class="timeline-item">
-                        <h4>Introduction à la science des données</h4>
-                        <span class="institution">Cybastion IT Academy</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 11 Avril 2026</span>
-                        <p class="item-desc">Bases de la science des données, de l'analyse des données et de leur utilisation pour la précision.</p>
-                    </div>
-
-                    <!--- Certification 2 --->
-                    <div class="timeline-item">
-                        <h4>Introduction à l'IA moderne</h4>
-                        <span class="institution">Cybastion IT Academy</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 08 Avril 2026</span>
-                        <p class="item-desc">Initiation aux concepts de l'IA moderne, ses applications et son impact sectoriel.</p>
-                    </div>
-
-                    <!--- Certification 3 --->
-                    <div class="timeline-item">
-                        <h4>Bases du matériel informatique</h4>
-                        <span class="institution">Cybastion IT Academy</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 24 Avril 2025</span>
-                        <p class="item-desc">Composants matériels d'un ordinateur, leur fonctionnement et leur rôle système.</p>
-                    </div>
-
-                    <!--- Certification 4 --->
-                    <div class="timeline-item">
-                        <h4>Introduction à la cybersécurité</h4>
-                        <span class="institution">Cybastion IT Academy</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 23 Avril 2025</span>
-                        <p class="item-desc">Notions fondamentales, menaces informatiques et bonnes pratiques de protection.</p>
-                    </div>
-
-                    <a href="Documents/CERTIFICATS/" target="_blank" class="btn btn-center">Voir mes certificats</a>
-                </div>
-
-                <!-- Badges -->
-                <div class="education-card">
-                    <div class="card-title">
-                        <i class="fa-solid fa-award"></i>
-                        <h3>Badges</h3>
-                    </div>
-
-                    <!--- Badge 1 --->
-                    <div class="timeline-item">
-                        <h4>Introduction to Data Science</h4>
-                        <span class="institution">Cisco Networking Academy</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 11 Avril 2026</span>
-                    </div>
-
-                    <!--- Badge 2 --->
-                    <div class="timeline-item">
-                        <h4>Introduction to Modern AI</h4>
-                        <span class="institution">Cisco Networking Academy</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 08 Avril 2026</span>
-                    </div>
-
-                    <!--- Badge 3 --->
-                    <div class="timeline-item">
-                        <h4>Introduction to Hardware Basics</h4>
-                        <span class="institution">Cisco Networking Academy</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 24 Avril 2025</span>
-                    </div>
-
-                    <!--- Badge 4 --->
-                    <div class="timeline-item">
-                        <h4>Introduction to Cybersecurity</h4>
-                        <span class="institution">Cisco Networking Academy</span>
-                        <span class="date"><i class="fa-regular fa-calendar"></i> 23 Avril 2025</span>
-                    </div>
-
-                    <a href="https://www.credly.com/users/michael-kouakou-folasayo" target="_blank" class="btn btn-center">Voir mes badges</a>
-                </div>
             </div>
         </section>
 
-        <!----- Section Compétences ----->
+        <!-- Section Compétences -->
         <section class="skills" id="skills">
-            <h2>Mes compétences</h2>
+            <h2 class="reveal">Mes compétences</h2>
+            <h3 class="skills-subtitle reveal">Compétences Techniques & Outils</h3>
 
-             <!---- Compétences Techniques & Outils ----> 
-            <h3 class="skills-subtitle">Compétences Techniques & Outils</h3>
             <div class="skills-grid">
                 
-                <div class="skill-card">
+                <!-- Carte 1 -->
+                <div class="skill-card reveal">
                     <div class="skill-header">
                         <i class="fa-solid fa-code"></i>
-                        <h4>Développement Web</h4>
+                        <h4>Développement Web & Code</h4>
                     </div>
-                    <p class="skill-desc">Création d'interfaces web modernes, responsives et performantes.</p>
+                    <p class="skill-desc">Création d'interfaces web responsives, programmation et manipulation de données.</p>
                     <ul class="skill-list">
                         <li>
-                            <strong>HTML5 / CSS3</strong> <span class="level badge-inter">Intermédiaire</span>
-                            <p>Pages web statiques, <br>stylisées et 100% responsives.</p>
+                            <div class="skill-title-row">
+                                <strong>HTML5 / CSS3</strong>
+                                <span class="level badge-inter">Intermédiaire</span>
+                            </div>
+                            <p>Pages web modernes, intégration Flexbox, CSS Grid et design 100% responsive.</p>
                         </li>
                         <li>
-                            <strong>JavaScript</strong> <span class="level badge-dev">Débutant</span>
-                            <p>Interactions simples, manipulation du <br> DOM et gestion d'événements.</p>
+                            <div class="skill-title-row">
+                                <strong>JavaScript</strong>
+                                <span class="level badge-dev">Débutant</span>
+                            </div>
+                            <p>Interactions DOM, asynchronisme, requêtes et liaison avec Firebase / API.</p>
                         </li>
                         <li>
-                            <strong>PHP</strong> <span class="level badge-dev">Débutant</span>
-                            <p>Gestion de formulaires et interaction <br> avec bases de données.</p>
+                            <div class="skill-title-row">
+                                <strong>Python</strong>
+                                <span class="level badge-dev">Débutant</span>
+                            </div>
+                            <p>Bases algorithmiques (accréditation Cisco / Python Institute) et traitement de données.</p>
                         </li>
                     </ul>
                 </div>
 
-                <!---- Compétences en Maintenance & Réseaux ---->
-                <div class="skill-card">
+                <!-- Carte 2 (Badges corrigés) -->
+                <div class="skill-card reveal">
                     <div class="skill-header">
                         <i class="fa-solid fa-network-wired"></i>
                         <h4>Maintenance & Réseaux</h4>
                     </div>
-                    <p class="skill-desc">Maintien du bon fonctionnement et de la disponibilité des équipements.</p>
+                    <p class="skill-desc">Interventions matérielles préventives, protocoles réseaux et suivi d'infrastructure.</p>
                     <ul class="skill-list">
                         <li>
-                            <strong>Maintenance préventive</strong> <span class="level badge-dev">Débutant</span>
-                            <p>Identification préventive des anomalies <br> et suivi matériel.</p>
+                            <div class="skill-title-row">
+                                <strong>Maintenance préventive</strong>
+                                <span class="level badge-dev">Débutant</span>
+                            </div>
+                            <p>Contrôles réguliers des postes, vérification des composants et suivi matériel pour anticiper les pannes.</p>
                         </li>
                         <li>
-                            <strong>Maintenance corrective</strong> <span class="level badge-dev">Débutant</span>
-                            <p>Diagnostic et résolution de pannes matérielles/logicielles.</p>
+                            <div class="skill-title-row">
+                                <strong>Réseaux & Câblage</strong>
+                                <span class="level badge-dev">Débutant</span>
+                            </div>
+                            <p>Adressage IP, notions fondamentales (Cisco), cheminement et pose d'infrastructures télécoms.</p>
+                        </li>
+                        <li>
+                            <div class="skill-title-row">
+                                <strong>Normes EHS & Sécurité</strong>
+                                <span class="level badge-inter">Intermédiaire</span>
+                            </div>
+                            <p>Règles de sécurité sur site, pose de balisage, grillage avertisseur et prévention des risques.</p>
                         </li>
                     </ul>
                 </div>
 
-                <!---- Compétences en Logiciels & Outils ---->
-                <div class="skill-card">
+                <!-- Carte 3 (Badges corrigés) -->
+                <div class="skill-card reveal">
                     <div class="skill-header">
                         <i class="fa-solid fa-toolbox"></i>
-                        <h4>Logiciels & Outils</h4>
+                        <h4>Outils, Déploiement & Cloud</h4>
                     </div>
-                    <p class="skill-desc">Outils quotidiens de conception, de développement et de versioning.</p>
+                    <p class="skill-desc">Outils de production, suivi de chantiers et hébergement en ligne.</p>
                     <ul class="skill-list">
                         <li>
-                            <strong>VS Code</strong> <span class="level badge-inter">Intermédiaire</span>
-                            <p>Édition de code, extensions et <br> gestion de projets.</p>
+                            <div class="skill-title-row">
+                                <strong>Git, GitHub & Vercel</strong>
+                                <span class="level badge-dev">Débutant</span>
+                            </div>
+                            <p>Gestion de versioning, collaboration d'équipe et déploiement continu d'applications web.</p>
                         </li>
                         <li>
-                            <strong>Git & GitHub</strong> <span class="level badge-dev">Débutant</span>
-                            <p>Gestion de versions et travail collaboratif.</p>
+                            <div class="skill-title-row">
+                                <strong>VS Code & Firebase</strong>
+                                <span class="level badge-dev">Débutant</span>
+                            </div>
+                            <p>Environnement de travail principal et base de données temps réel NoSQL.</p>
                         </li>
                         <li>
-                            <strong>Canva</strong> <span class="level badge-dev">Débutant</span>
-                            <p>Création de visuels simples et <br> supports de présentation.</p>
+                            <div class="skill-title-row">
+                                <strong>Outils Métier & IA</strong>
+                                <span class="level badge-dev">Débutant</span>
+                            </div>
+                            <p>Plateforme Huawei ISDP Mobile pour le suivi chantier et exploitation pratique de l'IA générative.</p>
                         </li>
                     </ul>
                 </div>
 
             </div>
 
+            <!-- Grille du bas -->
             <div class="skills-bottom-grid">
                 
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-header">
                         <i class="fa-solid fa-language"></i>
                         <h4>Langues</h4>
                     </div>
                     <ul class="skill-list">
                         <li>
-                            <strong>Français</strong> <span class="level badge-inter">Niveau B2</span>
-                            <p>Communication fluide à l'oral comme à l'écrit.</p>
+                            <div class="skill-title-row">
+                                <strong>Français</strong>
+                                <span class="level badge-inter">Niveau B2</span>
+                            </div>
+                            <p>Communication fluide à l'oral comme à l'écrit, aisance rédactionnelle.</p>
                         </li>
                         <li>
-                            <strong>Anglais</strong> <span class="level badge-dev">Niveau A2</span>
-                            <p>Compréhension de messages simples et situations courantes.</p>
+                            <div class="skill-title-row">
+                                <strong>Anglais</strong>
+                                <span class="level badge-dev">Niveau A2</span>
+                            </div>
+                            <p>Lecture et compréhension de documentations techniques informatiques.</p>
                         </li>
                     </ul>
                 </div>
 
-                <!---- Qualités Professionnelles ---->
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <div class="skill-header">
                         <i class="fa-solid fa-user-check"></i>
                         <h4>Qualités Professionnelles</h4>
                     </div>
                     <ul class="qualities-tags">
+                        <li><i class="fa-solid fa-check"></i> Rigueur & Organisation</li>
                         <li><i class="fa-solid fa-check"></i> Travail d'équipe</li>
-                        <li><i class="fa-solid fa-check"></i> Communication</li>
-                        <li><i class="fa-solid fa-check"></i> Autonomie</li>
-                        <li><i class="fa-solid fa-check"></i> Résolution de problèmes</li>
                         <li><i class="fa-solid fa-check"></i> Esprit d'analyse</li>
+                        <li><i class="fa-solid fa-check"></i> Sens de la sécurité</li>
+                        <li><i class="fa-solid fa-check"></i> Adaptabilité terrain</li>
                     </ul>
                 </div>
 
             </div>
         </section>
 
-
-        <!--- Section Projets --->
+        <!-- Section Projets -->
         <section class="projects" id="projects">
             <div class="container">
-                <h2>Mes Projets</h2><br>
-                <p class="section-subtitle">Découvrez une sélection de mes réalisations web personnelles et collaboratives.</p>
+                <h2 class="reveal">Mes Projets</h2><br>
+                <p class="section-subtitle reveal">Découvrez une sélection de mes réalisations web personnelles et collaboratives.</p>
             </div>
 
-            <!--- Catégorie : Projets Personnels --->
+            <!-- Projets Personnels -->
             <div class="projects-category">
-                <h3 class="category-title">
+                <h3 class="category-title reveal">
                     <i class="fa-solid fa-user"></i> Projets personnels
                 </h3>
                 
                 <div class="projects-grid">
-                    <!--- Projet 1 --->
-                    <article class="project-card">
+                    <!-- Projet Phare 1 : Nexia Quiz (En Pleine Largeur) -->
+                    <article class="project-card project-card-featured reveal">
+                        <div class="project-img-wrapper featured-img">
+                            <img src="Images/Quiz Nexia.png" alt="Aperçu Nexia Quiz">
+                            <span class="project-badge">Projet Phare • Web App Interactive</span>
+                        </div>
+                        <div class="project-content featured-content">
+                            <div class="featured-header">
+                                <h4>Nexia — Quiz en Ligne</h4>
+                                <div class="tech-stack-tags">
+                                    <span>JavaScript ES6</span>
+                                    <span>Firebase Firestore</span>
+                                    <span>API / Asynchrone</span>
+                                    <span>Vercel</span>
+                                </div>
+                            </div>
+                            <p>
+                                Plateforme interactive d'apprentissage et de quiz multi-thématiques (programmation, réseaux, sciences, langues). Conçue pour offrir une expérience temps réel sans rechargement de page.
+                            </p>
+                            <ul class="featured-highlights">
+                                <li><i class="fa-solid fa-bolt"></i> Classement mondial et scores mis à jour en temps réel via Firebase NoSQL.</li>
+                                <li><i class="fa-solid fa-clock"></i> Moteur algorithmique de questions chronométrées avec gestion des timers et avatars.</li>
+                                <li><i class="fa-solid fa-shield-halved"></i> Gestion d'état client fluide et architecture prête pour le dashboard d'administration.</li>
+                            </ul>
+                            <div class="project-actions">
+                                <a href="https://nexia-virid.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">Tester l'application <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2 : Nexia Admin -->
+                    <article class="project-card reveal">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Page admin Nexia.png" alt="Aperçu Nexia Admin">
+                            <span class="project-badge private-badge">Accès Restreint</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Nexia — Dashboard Admin</h4>
+                            <p>Tableau de bord de supervision : KPIs en direct, courbes de fréquentation, analyse détaillée des questions et gestion des abandons. Outil interne confidentiel (code et données restreints).</p>
+                            <div class="project-actions">
+                                <span class="btn-private"><i class="fa-solid fa-lock"></i> Projet Interne / Privé</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 3 : IVOIRE FOOD -->
+                    <article class="project-card reveal">
                         <div class="project-img-wrapper">
                             <img src="Images/Site restaurant.png" alt="Aperçu IVOIRE FOOD">
                             <span class="project-badge">Site Statique</span>
@@ -335,12 +507,15 @@
                         <div class="project-content">
                             <h4>IVOIRE FOOD</h4>
                             <p>Site web statique mettant en valeur la gastronomie ivoirienne à travers une interface attrayante, structurée et responsive présentant les différents mets locaux.</p>
-                            <a href="https://michael-tech17.github.io/Restaurant--IVOIRE/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <div class="project-actions">
+                                <a href="https://michael-tech17.github.io/Restaurant--IVOIRE/" target="_blank" rel="noopener noreferrer" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/michael-tech17/Restaurant--IVOIRE" target="_blank" rel="noopener noreferrer" class="btn-code" title="Code source"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </article>
 
-                    <!--- Projet 2 --->
-                    <article class="project-card">
+                    <!-- Projet 4 : LEG & FRU -->
+                    <article class="project-card reveal">
                         <div class="project-img-wrapper">
                             <img src="Images/Site LEG & FRU.png" alt="Aperçu LEG & FRU">
                             <span class="project-badge">Site Statique</span>
@@ -348,24 +523,15 @@
                         <div class="project-content">
                             <h4>LEG & FRU</h4>
                             <p>Vitrine e-commerce statique dédiée aux produits frais et sains, présentant le catalogue de produits avec des fonctionnalités visuelles de paiement et de gestion.</p>
-                            <a href="https://michael-tech17.github.io/FRU-LEG/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </article>
-                    <!--- Projet 3 --->
-                    <article class="project-card">
-                        <div class="project-img-wrapper">
-                            <img src="Images/Quiz.png" alt="Aperçu Quiz Application">
-                            <span class="project-badge">App Web Interactive</span>
-                        </div>
-                        <div class="project-content">
-                            <h4>Quiz Application</h4>
-                            <p>Application web interactive d'évaluation des connaissances informatiques, proposant un questionnaire dynamique structuré par thématiques.</p>
-                            <a href="https://michael-tech17.github.io/AstraCode/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <div class="project-actions">
+                                <a href="https://michael-tech17.github.io/FRU-LEG/" target="_blank" rel="noopener noreferrer" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/michael-tech17/FRU-LEG" target="_blank" rel="noopener noreferrer" class="btn-code" title="Code source"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </article>
 
-                    <!--- Projet 4 --->
-                    <article class="project-card">
+                    <!-- Projet 5 : KICKFLOW -->
+                    <article class="project-card reveal">
                         <div class="project-img-wrapper">
                             <img src="Images/Site chaussures.png" alt="Aperçu KICKFLOW">
                             <span class="project-badge">Site Statique</span>
@@ -373,34 +539,40 @@
                         <div class="project-content">
                             <h4>KICKFLOW</h4>
                             <p>Site web statique d'articles de mode demandant le remplissage d'un formulaire préalable afin de rediriger vers la page de présentation des articles.</p>
-                            <a href="https://michael-tech17.github.io/KICKFLOW/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </article>
-
-                    <!--- Projet 5 --->
-                    <article class="project-card">
-                        <div class="project-img-wrapper">
-                            <img src="Images/Dashboard.png" alt="Aperçu Dashboard">
-                            <span class="project-badge">Interface Statique</span>
-                        </div>
-                        <div class="project-content">
-                            <h4>Dashboard Analytic</h4>
-                            <p>Interface de tableau de bord statique moderne et épurée, conçue pour simuler la visualisation synthétique d'indicateurs de performance et d'activités.</p>
-                            <a href="https://michael-tech17.github.io/Dashboard/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <div class="project-actions">
+                                <a href="https://michael-tech17.github.io/KICKFLOW/" target="_blank" rel="noopener noreferrer" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/michael-tech17/KICKFLOW" target="_blank" rel="noopener noreferrer" class="btn-code" title="Code source"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </article>
                 </div>
             </div> <br>
 
-            <!--- Catégorie : Projets en Groupe --->
+            <!-- Projets en Groupe -->
             <div class="projects-category">
-                <h3 class="category-title">
+                <h3 class="category-title reveal">
                     <i class="fa-solid fa-users-gear"></i> Projets en groupe
                 </h3>
 
                 <div class="projects-grid">
-                    <!--- Projet 6 --->
-                    <article class="project-card">
+                    <!-- Projet 6 -->
+                    <article class="project-card reveal">
+                        <div class="project-img-wrapper">
+                            <img src="Images/Site LIAMA'S HAIR.png" alt="Aperçu Lima's Hair">
+                            <span class="project-badge team-badge">Front-End & Intégration</span>
+                        </div>
+                        <div class="project-content">
+                            <h4>Lima's Hair — Site Web & Back-Office</h4>
+                            <p>Conception front-end d'une plateforme salon de coiffure : vitrine avec galerie interactive, réservation en ligne synchronisée avec WhatsApp et interface d'administration privée.</p>
+                            <div class="project-actions">
+                                <a href="https://michael-tech17.github.io/LIAMA-S_HAIR/" target="_blank" rel="noopener noreferrer" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/michael-tech17/LIAMA-S_HAIR" target="_blank" rel="noopener noreferrer" class="btn-code" title="Code source"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 7 -->
+                    <article class="project-card reveal">
                         <div class="project-img-wrapper">
                             <img src="Images/Formulaire.png" alt="Aperçu Formulaire de Contact">
                             <span class="project-badge team-badge">Front-End Responsive</span>
@@ -408,12 +580,15 @@
                         <div class="project-content">
                             <h4>Fiche d'Identification Web</h4>
                             <p>Interface front-end responsive pour un formulaire de recensement. Réalisation intégrale du côté client (Front-End) associée au Back-End de mon partenaire.</p>
-                            <a href="https://michael-tech17.github.io/Formulaire/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <div class="project-actions">
+                                <a href="https://michael-tech17.github.io/Formulaire/" target="_blank" rel="noopener noreferrer" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/michael-tech17/Formulaire" target="_blank" rel="noopener noreferrer" class="btn-code" title="Code source"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </article>
 
-                    <!--- Projet 7 --->
-                    <article class="project-card">
+                    <!-- Projet 8 -->
+                    <article class="project-card reveal">
                         <div class="project-img-wrapper">
                             <img src="Images/Site pharmacie.png" alt="Aperçu PHARMACORE">
                             <span class="project-badge ongoing-badge">En cours (Statique)</span>
@@ -421,7 +596,10 @@
                         <div class="project-content">
                             <h4>PHARMACORE</h4>
                             <p>Projet en cours de site web statique réalisé en binôme, mettant en avant la présentation des activités et de la gestion de stock au sein d'une pharmacie.</p>
-                            <a href="https://michael-tech17.github.io/PHARMACORE/" target="_blank" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <div class="project-actions">
+                                <a href="https://michael-tech17.github.io/PHARMACORE/" target="_blank" rel="noopener noreferrer" class="btn">Voir le projet <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/michael-tech17/PHARMACORE" target="_blank" rel="noopener noreferrer" class="btn-code" title="Code source"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -430,24 +608,21 @@
 
         <!-- Section Contact -->
         <section class="contact" id="contact">
-            <h2>Contact</h2>
-            <p class="section-subtitle">
+            <h2 class="reveal">Contact</h2>
+            <p class="section-subtitle reveal">
                 Une question, un projet, une opportunité de stage ou d'emploi ? Je serai ravi d'échanger avec vous. N'hésitez pas à me laisser un message ou à me contacter directement via mes coordonnées ci-dessous.
             </p>
 
             <div class="contact-container">
-                <!-- Informations de contact -->
-                <div class="contact-info">
-                    <!-- Email -->
+                <div class="contact-info reveal">
                     <div class="info-box">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p><a href="mailto:michaelkouakoufolasayo492@gmail.com">michaelkouakoufolasayo492@gmail.com</a></p>
+                            <p><a href="mailto:michaelkouakoufolasayo477@gmail.com">michaelkouakoufolasayo477@gmail.com</a></p>
                         </div>
                     </div>
 
-                    <!-- Téléphone -->
                     <div class="info-box">
                         <i class="fa-solid fa-phone"></i>
                         <div>
@@ -456,21 +631,19 @@
                         </div>
                     </div>
 
-                    <!-- Github -->
                     <div class="info-box">
                         <i class="fa-brands fa-github"></i>
                         <div>
                             <h4>GitHub</h4>
-                            <p><a href="https://github.com/michael-tech17" target="_blank">https://github.com/michael-tech17</a></p>
+                            <p><a href="https://github.com/michael-tech17" target="_blank" rel="noopener noreferrer">https://github.com/michael-tech17</a></p>
                         </div>
                     </div>
 
-                    <!-- LinkedIns -->
                     <div class="info-box">
                         <i class="fa-brands fa-linkedin-in"></i>
                         <div>
                             <h4>LinkedIn</h4>
-                            <p><a href="https://www.linkedin.com/in/folasayo-michael" target="_blank">https://www.linkedin.com/in/folasayo-michael</a></p>
+                            <p><a href="https://www.linkedin.com/in/folasayo-michael" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/folasayo-michael</a></p>
                         </div>
                     </div>
 
@@ -483,8 +656,7 @@
                     </div>
                 </div>
 
-                <!-- Formulaire de contact -->
-                <div class="contact-form">
+                <div class="contact-form reveal">
                     <h3>Envoyez-moi un message</h3>
                     <p>Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.</p>
 
@@ -522,12 +694,15 @@
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <a href="#" class="logo"><span>FOLASAYO</span> Michaël</a>
-                <p>Développeur Web Junior & Technicien Maintenance Junior passionné par l'innovation numérique et les technologies matérielles.</p>
+                <a href="#" class="logo">
+                    <img src="Images/Logo.jpg" alt="Logo FOLASAYO Michaël" class="logo-img">
+                    <span>FOLASAYO</span> Michaël
+                </a>
+                <p>Développeur Web & Logiciel Junior passionné par la conception d'applications performantes, l'innovation numérique et les technologies web.</p>
                 <div class="footer-social">
-                    <a href="https://github.com/michael-tech17" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/michaël-kouakou-folasayo-94a248425" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="mailto:michaelkouakoufolasayo492@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://github.com/michael-tech17" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/folasayo-michael" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:michaelkouakoufolasayo477@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
 
@@ -536,7 +711,7 @@
                 <ul>
                     <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
                     <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> À propos</a></li>
-                    <li><a href="#education"><i class="fa-solid fa-chevron-right"></i> Formations</a></li>
+                    <li><a href="#education"><i class="fa-solid fa-chevron-right"></i> Parcours</a></li>
                     <li><a href="#skills"><i class="fa-solid fa-chevron-right"></i> Compétences</a></li>
                     <li><a href="#projects"><i class="fa-solid fa-chevron-right"></i> Projets</a></li>
                     <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
@@ -547,7 +722,7 @@
                 <h4>Contact rapide</h4>
                 <p><i class="fa-solid fa-location-dot"></i> Adjamé-Paillet, Abidjan, Côte d'Ivoire</p>
                 <p><i class="fa-solid fa-phone"></i> +225 07 69 50 55 12</p>
-                <p><i class="fa-solid fa-envelope"></i> michaelkouakoufolasayo492@gmail.com</p>
+                <p><i class="fa-solid fa-envelope"></i> michaelkouakoufolasayo477@gmail.com</p>
             </div>
         </div>
 
@@ -556,6 +731,15 @@
             <a href="#home" class="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up"></i></a>
         </div>
     </footer>
+
+    <!-- Bouton flottant WhatsApp -->
+    <a href="https://wa.me/2250769505512?text=Bonjour%20FOLASAYO,%20je%20vous%20contacte%20depuis%20votre%20portfolio." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Discuter sur WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>
