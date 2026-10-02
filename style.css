@@ -521,6 +521,39 @@ header {
     transform: translateY(-3px);
 }
 
+/* Boutons pour les attestations de stage */
+.stage-certif-action {
+    margin-top: 0.8rem;
+    display: flex;
+}
+
+.btn-certif-stage {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #46ECC5;
+    background: rgba(70, 236, 197, 0.08);
+    border: 1px solid rgba(70, 236, 197, 0.3);
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-certif-stage:hover {
+    background: #46ECC5;
+    color: #0B0F10;
+    border-color: #46ECC5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(70, 236, 197, 0.3);
+}
+
+.btn-certif-stage i {
+    font-size: 0.85rem;
+}
+
 /* ==========================================================================
    8. SECTION COMPÉTENCES (SKILLS)
    ========================================================================== */
@@ -989,8 +1022,8 @@ header {
     }
 
     .logo-img {
-        width: 30px;
-        height: 30px;
+        width: 36px;
+        height: 36px;
     }
 
     /* Bouton Me contacter : texte complet toujours affiché */
@@ -1388,20 +1421,19 @@ footer {
     transform: translateY(-3px);
 }
 
+
 /* ===================================================================================
    12. STYLE DU LOGO IMAGE & DU BOUTON FLOTTANT WHATSAPP AVEC ANIMATION DE LEVITATION
    =================================================================================== */
 .logo-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    object-fit: cover;
-    /* Zoom x1.1 centré sur le monogramme pour enlever les bordures superflues */
-    transform: scale(1.1);
+    width: 46px; /* Agrandit le logo pour rendre le texte FM et les orbites bien nets */
+    height: 46px;
+    border-radius: 12px;
+    object-fit: contain;
     border: none;
-    box-shadow: none;
+    box-shadow: 0 0 15px rgba(70, 236, 197, 0.2); /* Ajoute une lueur néon subtile */
     flex-shrink: 0;
-    margin-right: 2px; /* Crée l'espace nécessaire pour ne pas manger le 'F' de FOLASAYO */
+    margin-right: 8px; /* Espace équilibré avant FOLASAYO */
 }
 
 /* On masque tout ce qui dépasse du conteneur du logo */
