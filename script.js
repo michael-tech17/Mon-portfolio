@@ -114,9 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const showFeedback = (message, isSuccess = true) => {
         const feedback = getFeedbackElement();
         feedback.className = isSuccess ? 'success' : 'error';
-        feedback.innerHTML = isSuccess 
-            ? `<i class="fa-solid fa-circle-check" style="margin-right: 8px;"></i> ${message}`
-            : `<i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i> ${message}`;
+        feedback.textContent = '';
+        const icon = document.createElement('i');
+        icon.className = (isSuccess ? 'fa-solid fa-circle-check' : 'fa-solid fa-triangle-exclamation') + ' feedback-icon';
+        feedback.append(icon, ' ', message);
         
         // Fait défiler la vue vers la confirmation si l'écran est petit
         feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

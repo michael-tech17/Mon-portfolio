@@ -1681,3 +1681,7 @@ footer {
         padding: 1rem;
     }
 }
+
+/* Honeypot anti-spam + icône du retour formulaire */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.feedback-icon { margin-right: 8px; }
